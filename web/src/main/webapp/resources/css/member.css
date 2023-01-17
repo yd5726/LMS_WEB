@@ -1,0 +1,135 @@
+@charset "UTF-8";
+.d-none{ display: none; }
+p,h3,h4,h5,h6{ margin:0; padding: 0; }
+body{
+	font-family: "Noto Sans KR";
+	font: 14px;
+	color: #666;
+	overflow-y: scroll;
+}
+.main_wrap{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#container{
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	text-align: left; 
+}
+#contet_area{
+	float: none;
+	width: 1200px;
+	min-height: 750px;
+}
+.path{
+	top: 25px;
+	padding: 0;
+	width: 100%;
+	display: block;
+	position: absolute;
+	right: 0;
+	left: 0;
+	overflow: hidden;
+	margin: 0 auto;
+	font-size: 15px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+ol,ul,li{
+	list-style: none;
+}
+.contet_body{
+	padding-left: 15px;
+	overflow: hidden;
+}
+.join-normal{
+	margin-bottom: 30px;
+}
+form{
+	padding: 0;
+	margin: 0;
+}
+.box_title{
+	color: #2d2d2d;
+	font-size: 16px;
+	font-weight: 700;
+	margin: 25px 0 5px 0;
+}
+.box_tx{
+	margin: 0 0 15px 0;
+}
+.gray_box{
+	border: 1px solid #dcdcdc;
+	background-color: #fafafa;
+	padding: 13px 15px;
+	margin-bottom: 20px;
+}
+.gray_box.top{
+	border-top: 1px solid #676767;
+}
+.gray_box .box_stitle{
+	font-weight: 700;
+	font-size: 13px;
+	color: #464646;
+	margin-bottom: 8px;
+}
+.g_box_in{
+	border: 1px solid #dbdbdb;
+	background-color: #fff;
+	height: 60px;
+	overflow: auto;
+	padding: 14px 10px;
+	margin-bottom: 10px;
+}
+.textin{
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 25px;
+}
+.textin > .clause{
+	margin-top: -20px;
+}
+.depth1{
+	margin-top: 0px;
+}
+.textin > .clause h3{
+	font-size: 14px;
+	font-weight: normal;
+	color: #666666;
+	line-height: 25px;
+	padding: 0;
+	margin: 10px 0 0 0;
+}
+.content_title{
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+	font-family: "noto_sans",sans-serif;
+	color: #000;
+	font-size: 30px;
+	line-height: 35px;
+	padding: 0;
+	margin: 0 0 20px;
+	letter-spacing: -0.07em;
+	font-weight: bold;
+}
+.path_list{
+	margin: 0;
+	padding: 0;
+	float: none;
+	display: inline-block;
+	width: auto;
+	max-width: 1200px;
+	background: none;
+	box-sizing: border-box;
+}
+.path_list li{
+	float: left;
+	margin: 1px;
+}
+.path_list li.last {
+    color: #222;
+}
