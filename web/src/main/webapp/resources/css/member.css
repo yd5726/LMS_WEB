@@ -1,9 +1,9 @@
 @charset "UTF-8";
+a{ text-decoration: none; color: #000; }
 .d-none{ display: none; }
 p,h3,h4,h5,h6{ margin:0; padding: 0; }
 body{
 	font-family: "Noto Sans KR";
-	font: 14px;
 	color: #666;
 	overflow-y: scroll;
 }
@@ -11,6 +11,9 @@ body{
 	width: 1200px;
 	margin: 0 auto;
 	overflow: hidden;
+}
+#container.ct_top{
+	padding-top: 80px;
 }
 #container{
 	position: relative;
@@ -22,21 +25,6 @@ body{
 	float: none;
 	width: 1200px;
 	min-height: 750px;
-}
-.path{
-	top: 25px;
-	padding: 0;
-	width: 100%;
-	display: block;
-	position: absolute;
-	right: 0;
-	left: 0;
-	overflow: hidden;
-	margin: 0 auto;
-	font-size: 15px;
-	text-align: center;
-	box-sizing: border-box;
-	padding: 10px 0;
 }
 ol,ul,li{
 	list-style: none;
@@ -79,7 +67,7 @@ form{
 .g_box_in{
 	border: 1px solid #dbdbdb;
 	background-color: #fff;
-	height: 60px;
+	height: 100px;
 	overflow: auto;
 	padding: 14px 10px;
 	margin-bottom: 10px;
@@ -92,9 +80,6 @@ form{
 .textin > .clause{
 	margin-top: -20px;
 }
-.depth1{
-	margin-top: 0px;
-}
 .textin > .clause h3{
 	font-size: 14px;
 	font-weight: normal;
@@ -103,10 +88,56 @@ form{
 	padding: 0;
 	margin: 10px 0 0 0;
 }
-.content_title{
+.path{
+	width: 100%;
 	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+	font-size: 15px;
 	text-align: center;
-	margin-top: 20px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 40px;
+}
+.lnb_title{
+	display: block;
+    font-weight: bold;
+    font-size: 35px;
+    color: #000;
+    background: none;
+    height: 35px;
+    margin-bottom: 40px;
+    line-height: 100%;
+    text-align: center;
+    border: none;
+    letter-spacing: -0.07em;
+}
+.lnb_list {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/*수정중 */
+.lnb_list li{
+	border: 1px solid #000;
+	border-radius: 50px;
+	padding: 10px 30px 10px;
+	margin-right: 10px; 
+}
+.on{
+	background: #000;
+}
+.on a{
+	color: #fff;
+}
+.content_title{
+	/* display: block; */
+	display: none;
+	text-align: center;
 	font-family: "noto_sans",sans-serif;
 	color: #000;
 	font-size: 30px;
@@ -116,20 +147,46 @@ form{
 	letter-spacing: -0.07em;
 	font-weight: bold;
 }
-.path_list{
-	margin: 0;
-	padding: 0;
-	float: none;
-	display: inline-block;
-	width: auto;
-	max-width: 1200px;
-	background: none;
-	box-sizing: border-box;
-}
-.path_list li{
-	float: left;
-	margin: 1px;
-}
 .path_list li.last {
     color: #222;
+}
+.path_list:before {
+    content: '홈';
+}
+.path_list li:before {
+    content: '-';
+}
+.path_list {
+    float: none;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    max-width: 1200px;
+    background: none;
+    padding-left: 0px;
+    box-sizing: border-box;
+}
+.board.btn {
+    margin-top: 20px;
+    text-align: center;
+}
+.button{
+	padding: 10px 40px 10px;
+	width: 200px;
+}
+.button.gray {
+    background: #333;
+    color: #fff;
+    border: 1px #333 solid;
+}
+.button.white {
+    background: #fff;
+    color: #333;
+    border: 1px #333 solid;
+}
+.depth1{
+	margin: 0px;
+}
+.depth2{
+	margin: 0px;
 }
