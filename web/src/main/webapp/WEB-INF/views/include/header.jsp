@@ -13,7 +13,10 @@ header nav ul { font-size: 18px; font-weight: bold; }
 header nav ul li:not(:first-child) { margin-left: 50px; }
 header nav li a.active, header nav li a:hover { color: #0040ff; font-weight: bold; }
 header div li:not(:first-child) { margin-left: 5px; }
-
+.profile{
+	width: 20px;
+	height: 20px;
+}
 </style> 
 <header>
 <nav>
@@ -37,8 +40,8 @@ header div li:not(:first-child) { margin-left: 5px; }
 		
 		<!-- 로그인 한 경우 -->
 		<c:if test="${not empty loginInfo }">
-			<li><img class='profile' src="${loginInfo.profile}">
-			<li><strong> ${loginInfo.name }</strong></li>
+			<li><img class='profile' src="${loginInfo.profilepath}">
+			<li><strong> ${loginInfo.member_name }</strong></li>
 			<li><a class='btn-fill' href="changePW">비밀번호변경</a></li>
 			<li><a class='btn-fill' href="logout">로그아웃</a></li>
 		</c:if>
