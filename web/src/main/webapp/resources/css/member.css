@@ -29,9 +29,9 @@ body{
 ol,ul,li{
 	list-style: none;
 }
-.contet_body{
-	padding-left: 15px;
+.content_body{
 	overflow: hidden;
+	padding: 15px 0 0;
 }
 .join-normal{
 	margin-bottom: 30px;
@@ -121,7 +121,6 @@ form{
     box-sizing: border-box;
     overflow: hidden;
 }
-/*수정중 */
 .lnb_list li{
 	border: 1px solid #000;
 	border-radius: 50px;
@@ -227,7 +226,9 @@ form{
 	line-height: 40px;
 	padding: 2px 0 1px 6px;
 }
-input[type=text], input[type=password]{
+input[type=text], input[type=password],select{
+	height: 30px;
+	line-height: 30px;
 	box-sizing: border-box;
 	border: 1px solid #cccccc;
 }
@@ -257,4 +258,46 @@ input[type=text], input[type=password]{
 	float: left;
 	width: 45%;
 	margin: 0 0 20px 0;
+}
+.tb_box{
+	border-top: 1px solid #727272;
+}
+.w200{
+	width: 208px;
+}
+.w100{
+	width: 108px;
+}
+.w50{
+	width: 50px;
+}
+tbody th.tb_th{
+	background-color: #f8f8f8;
+	color: #474747;
+	padding-left: 10px;
+	text-align: left;
+	border-bottom: 1px solid #d1d1d1;
+}
+tbody td{
+	height: 22px;
+	line-height: 22px;
+	border-bottom: 1px solid #d1d1d1;
+	padding: 10px;
+}
+table{
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;	
+	box-sizing: border-box;
+	text-indent: inherit;
+}
+.must{
+	font-weight: bold;
+	color: #ff0000;
+	content: " *";
+}
+#id_ck{
+	width: 100px;
+	padding: 5px;
 }

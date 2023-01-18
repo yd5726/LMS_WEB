@@ -10,24 +10,35 @@ header {
 }
 header nav, header ul { display: flex; }
 header nav ul { font-size: 18px; font-weight: bold; }
-header nav ul li:not(:first-child) { margin-left: 50px; }
-header nav li a.active, header nav li a:hover { color: #0040ff; font-weight: bold; }
+header nav ul li:not(:first-child) { margin-left: 10px; }
+header nav li a.active, header nav li a:hover { color: #fff; font-weight: bold; }
 header div li:not(:first-child) { margin-left: 5px; }
 .profile{
 	width: 20px;
 	height: 20px;
 }
 </style> 
+<style>
+	a{ text-decoration: none; color: #000; }
+	nav{
+		display: flex;
+		justify-content: center;
+		flex-basis: auto;
+		flex-grow: 1;
+		align-items: center;
+		background-color: #656565;
+	}
+	nav ul{
+		flex-direction: row;
+	}
+</style> 
 <header>
 <nav>
 	<ul>
-		<li><a href='<c:url value="/"/>'><img src='images/hanul.ico'></a></li>
-		<li><a href='list.cu' ${category eq 'cu' ? 'class="active"' : ''}>고객관리</a></li>
-		<li><a href='list.hr' ${category eq 'hr' ? 'class="active"' : ''}>사원관리</a></li>
-		<li><a href='list.no' ${category eq 'no' ? 'class="active"' : ''}>공지사항</a></li>
-		<li><a>방명록</a></li>
-		<li><a>공공데이터</a></li>
-		<li><a>시각화</a></li>
+		<li><a href='<c:url value="/"/>'>홈</a></li>
+		<li><a href='list.cu' ${category eq 'cu' ? 'class="active"' : ''}>강의</a></li>
+		<li><a href='list.hr' ${category eq 'hr' ? 'class="active"' : ''}>게시판</a></li>
+		<li><a href='list.no' ${category eq 'no' ? 'class="active"' : ''}>마이페이지</a></li>
 	</ul>
 </nav>
 <div>

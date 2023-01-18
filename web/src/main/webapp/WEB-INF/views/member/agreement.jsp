@@ -16,10 +16,10 @@
 				<h3 class="lnb_title">회원서비스</h3>
 				<ul id="lnb" class="lnb_list" data-code="member">
 					<li id="lnb_login">
-						<a href="#/member/login.jsp" target="_self">로그인</a>
+						<a href="login" target="_self">로그인</a>
 					</li>
 					<li id="lnb_join" class="on">
-						<a href="#/member/join.jsp" target="_self">회원가입</a>
+						<a href="member" target="_self">회원가입</a>
 					</li>
 					<li id="lnb_findpw">
 						<a href="#/member/find.jsp" target="_self">비밀번호찾기</a>
@@ -40,9 +40,9 @@
 					</ol>
 				</div>
 				<h4 class="content_title">회원가입</h4>
-				<div class="contet_body">
+				<div class="content_body">
 					<div class="join_normal">
-						<form name="agreement" method="POST" action="#/member/join">
+						<form name="agreement" method="POST" action="join">
 							<h5 class="box_title">약관동의</h5>
 							<p class="box_tx">회원가입을 위해서 아래 이용약관, 개인정보 및 이용에 대한 안내를 읽고 동의해 주세요.</p>
 							<div class="gray_box top">
@@ -172,8 +172,8 @@
 								</p>
 							</div>
 							<div class="board btn">
-								<input type="submit" class="button gray" value="동의합니다.">
 								<input type="button" class="button white" onclick="history.go(-1)" value="동의하지 않습니다.">
+								<input type="submit" class="button gray" value="동의합니다.">
 							</div>
 						</form>
 					</div>

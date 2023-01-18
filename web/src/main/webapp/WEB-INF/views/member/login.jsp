@@ -16,10 +16,10 @@
 				<h3 class="lnb_title">회원서비스</h3>
 				<ul id="lnb" class="lnb_list" data-code="member">
 					<li id="lnb_login" class="on">
-						<a href="#/member/login.jsp" target="_self">로그인</a>
+						<a href="login" target="_self">로그인</a>
 					</li>
 					<li id="lnb_join">
-						<a href="#/member/join.jsp" target="_self">회원가입</a>
+						<a href="member" target="_self">회원가입</a>
 					</li>
 					<li id="lnb_findpw">
 						<a href="#/member/find.jsp" target="_self">비밀번호찾기</a>
@@ -40,7 +40,7 @@
 					</ol>
 				</div>
 				<h4 class="content_title">로그인</h4>
-				<div class="contet_body">
+				<div class="content_body">
 					<div class="login_box">
 						<div class="log_form">
 							<h5 class="log_tt">
