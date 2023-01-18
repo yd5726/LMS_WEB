@@ -297,7 +297,8 @@ table{
 	color: #ff0000;
 	content: " *";
 }
-#id_ck{
+#id_ck, #post{
 	width: 100px;
 	padding: 5px;
+	font-size: 13px;
 }

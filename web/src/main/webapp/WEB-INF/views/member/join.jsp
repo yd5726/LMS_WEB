@@ -6,7 +6,18 @@
 	<meta charset="UTF-8">
 	<title>회원가입</title>
 	<link rel="stylesheet" type="text/css" href="css/member.css?<%=new java.util.Date()%>">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
+<style>
+	.hasDatepicker{ cursor: pointer; }
+	.ui-datepicker { 
+		width: 17em; 
+		padding: .2em .2em 0; 
+		display: none;
+		 font-size: 20px;
+		 background-color: #fff;
+	}
+</style>
 <body>
 	<h3 class="d-none">회원서비스</h3>
 	<div id="container" class="ct_top">
@@ -42,8 +53,9 @@
 				<h4 class="content_title">회원가입</h4>
 				<div class="content_body">
 					<h5 class="box_title">회원가입</h5>
+					<span class="must">*필수 항목입니다.</span>
 					<div class="tb_box">
-						<form method='post' action='join' enctype='multipart/form-data'>
+						<form method='post' action='join_ok' enctype='multipart/form-data'>
 							<table>
 								<colgroup>
 									<col style="width: 14%">
@@ -61,26 +73,27 @@
 									<tr><th class="tb_th">
 											<label for="login_id" class="join_required">아이디<span class="must">*</span></label>
 										</th>
-										<td><input type="text" name="login_id" id="login_id" class="w200">
-											<input type="button" class="button gray" id="id_ck" value="중복확인">
-											<span>영문으로 시작하는 2-20자 영문, 숫자 조합을 입력하세요.</span>
+										<td><input type='text' name='id' class='chk w200'>
+											<input type="button" id="id_ck" class="button gray" id="id_ck" value="중복확인">
+											<div class='valid'>아이디를 입력하세요(영문소문자,숫자만)</div>
 										</td>
 									</tr>
 									<tr><th class="tb_th">
 											<label for="password" class="join_required">비밀번호<span class="must">*</span></label>
 										</th>
-										<td><input type="password" name="password" id="password" class="w200">
-											<span>영문, 숫자, 특수문자 조합 8자 이상 입력하세요.</span>
+										<td><input type='password' name='password' class='chk w200'>
+											<div class='valid'>비밀번호를 입력하세요(영문대/소문자,숫자 모두 포함)</div>
 										</td>
 									</tr>
-									<tr><th class="tb_th"><label for="password_ck" class="join_required">비밀번호 확인<span class="must">*</span></label>
+									<tr><th class="tb_th"><label for="password_ck" class="join_required chk">비밀번호 확인<span class="must">*</span></label>
 										</th>
-										<td><input type="password" name="password_ck" class="w200">
+										<td><input type='password' name='password_ck' class='chk w200'>
+											<div class='valid'>비밀번호를 다시 입력하세요</div>
 										</td>
 									</tr>
-									<tr><th class="tb_th"><label for="user_name" class="join_required">이름<span class="must">*</span></label>
+									<tr><th class="tb_th"><label for="member_name" class="join_required">이름<span class="must">*</span></label>
 										</th>
-										<td><input type="text" name="user_name" class="w200">
+										<td><input type="text" name="member_name" class="w200">
 										</td>
 									</tr>
 									<tr><th class="tb_th">
@@ -91,51 +104,44 @@
 											<label><input type="radio" name="gender" value="여">여</label>
 										</td>
 									</tr>
-									<tr><th class="tb_th"><label for="email" class="join_required">이메일</label>
+									<tr><th class="tb_th"><label for="email" class="join_required chk">이메일</label>
 										</th>
 										<td><div style="float:left;">
-												<input type="text" name="email" id="email1" class="w100">
-												@
-												<input type="text" name="email" id="email2" class="w100">
-												<select id="email3">
-													<option>- 직접입력 -</option>
-													<option value="naver.com">naver.com</option>
-													<option value="gmail.com">gmail.com</option>
-												</select>
+											<input type='text' name='email' class='chk w200'>
+											<div class='valid'>이메일을 입력하세요</div>
 											</div>
 										</td>
 									</tr>
 									<tr><th class="tb_th"><label for="birth" class="join_required">생년월일</label>
 										</th>
-										<td><input type="text" name="birth" class="w200" placeholder="yyyy-MM-DD">
+										<td><input type='text' name='birth' class='date' readonly>
+											<a id='delete' style="display: none;"><i class="font-r fa-regular fa-calendar-xmark"></i></a>
 										</td>
 									</tr>
 									<tr><th class="tb_th"><label for="phone" class="join_required">전화번호</label>
 										</th>
-										<td><select name="phone1">
-												<option>-선택-</option>
-												<option value="010">010</option>
-												<option value="062">062</option>
-											</select>
-											-
-											<input type="text" name="phone2" maxlength="4" class="w50">
-											-
-											<input type="text" name="phone3" maxlength="4" class="w50">
+										<td><input type='text' name='phone' maxlength="13">
 										</td>
 									</tr>
-									<tr><th class="tb_th"><label for="post" class="join_required">우편번호</label>
+									<tr><th class="tb_th"><label for="post" class="join_required">주소</label>
 										</th>
-										<td><input type="text" name="post" class="w200" placeholder="우편번호">
-										</td>
-									</tr>
-									<tr><th class="tb_th"><label for="address" class="join_required">주소</label>
-										</th>
-										<td><input type="text" name="address" class="w200" placeholder="주소">
+										<td>
+											<input type="button" id="post" class="button gray" value="우편번호찾기">
+											<input type='text' name='post' class='w-px60' readonly>
+											<input type='text' name='address' class='full' readonly>
+											<input type='text' name='address' class='full'>
 										</td>
 									</tr>
 									<tr><th class="tb_th"><label for="prifilepath" class="join_required">프로필 이미지</label>
 										</th>
-										<td><input type="text" name="prifilepath" class="w200" placeholder="프로필 이미지">
+										<td>
+											<div class='align'>
+												<label>
+													<input type='file' id='attach-file' accept="image/*" name='prifilepath' class="w200">
+												</label>
+												<span id='preview'></span>
+												<a id='delete-file' style="display: none;"><i class="font-r fa-solid fa-trash-can"></i></a>
+											</div>
 										</td>
 									</tr>
 								</tbody>
@@ -143,15 +149,134 @@
 						</form>
 						<div class="board btn">
 							<input type="button" class="button white" value="취소" onclick="location.href='<c:url value="/"/>'">
-							<input type="button" class="button gray" id="btn_submit" value="회원가입">
+							<input type="button" class="button gray join" id="btn_submit" value="회원가입">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src='js/member.js?<%=new java.util.Date()%>'></script>
+<script src='js/member.js?<%=new java.util.Date()%>'></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+<script>
+$('.join').click(function(){
+	if( $.trim($('[name=member_name]').val())=='' ){
+		alert('이름을 입력하세요');
+		$('[name=member_name]').focus();
+		$('[name=member_name]').val('');
+		return;
+	}
+	//유효성확인
+	//중복확인 했고 이미사용중인 경우 가입불가
+	//중복확인하지 않은경우 가입불가
+	var _id = $('[name=id]');
+	if( _id.hasClass('chked') ){
+		if( _id.siblings('div').hasClass('invalid') ){
+			alert('회원가입 불가!\n' + member.id.unUsable.desc);
+			_id.focus();
+			return;
+		}
+		
+	}else{
+		//유효하지 않게 입력해서 회원가입불가
+		if( tagIsInvalid( _id ) ) return;
+		else{
+			//중복확인하지 않아서 회원가입불가			
+			alert('회원가입 불가!\n' + member.id.valid.desc);
+			_id.focus();
+			return;
+		}
+	}
+	if( tagIsInvalid( $('[name=password]') ) ) return;
+	if( tagIsInvalid( $('[name=password_ck]') ) ) return;
+	$('form').submit();
+});
+
+//유효성확인
+function tagIsInvalid( tag ){
+	var status = member.tag_status( tag );
+	if( status.code=='invalid' ){
+		alert('회원가입 불가!\n' + status.desc);
+		tag.focus();
+		return true;
+	}else
+		return false;
+}
+
+//아이디 중복확인
+$('#id_ck').click(function(){
+	idCheck(); 
+});
+function idCheck(){
+	var $id = $('[name=id]');
+	//이미 중복확인했다면 재확인 불필요
+	if( $id.hasClass('chked') ) return;
+	
+	var status = member.tag_status( $id );
+	if( status.code=='invalid' ){
+		alert('아이디 중복확인 불필요!\n' + status.desc);
+		$id.focus();
+	}else{
+		$.ajax({
+			url: 'idCheck',
+			data: { id: $id.val() },
+			success: function( response ){
+				//false: 아이디 존재X, true: 아이디 존재
+				status = response ? member.id.unUsable : member.id.usable;
+				$id.siblings('div').text( status.desc )
+										.removeClass().addClass( status.code );
+				//중복확인완료지정
+				$id.addClass('chked');
+			},error: function(req, text){
+				alert(text+':' + req.status);
+			}						
+		});
+	}	
+}
+
+$('.chk').keyup(function(e){
+	if( $(this).attr('name')=='id' && e.keyCode==13 ){ //아이디에서 Enter시 중복확인처리
+		idCheck();
+	}else{
+		$(this).removeClass('chked');
+		var status = member.tag_status( $(this) );
+		$(this).siblings('div').text( status.desc ).removeClass().addClass( status.code );
+	}
+});
+
+//날짜변경시 날짜삭제 버튼 나오게
+$('.date').change(function(){
+	$(this).next().css('display', 'inline');
+});
+//날짜삭제 버튼 클릭시 날짜없애고, 날짜삭제 버튼도 안나오게
+$('#delete').click(function(){
+	$(this).css('display','none');
+	$(this).siblings('.date').val('');
+});
+
+//생년월일 특정날짜(만8세)까지만 선택가능하도록 제한
+var today = new Date();
+var endDay = new Date( today.getFullYear()-8, today.getMonth(), today.getDate()-1 );
+var range = today.getFullYear()-80 + ':' + endDay.getFullYear();
+$('.date').datepicker({
+	yearRange: range,
+	maxDate: endDay,
+});
+
+$('#post').click(function(){
+	//다음 우편번호찾기 api로 우편번호와 기본주소를 조회해온다.
+	new daum.Postcode({
+		oncomplete: function(data) {
+			console.log( data )
+			$('[name=post]').val( data.zonecode );
+			var address = data.userSelectedType == 'R' ? data.roadAddress : data.jibunAddress;
+			if( data.buildingName != '' ) address += ' ('+data.buildingName+')';
+			$('[name=address]').eq(0).val( address );
+		}
+    }).open();
+});
+</script>
 </body>
 </html>
-
-

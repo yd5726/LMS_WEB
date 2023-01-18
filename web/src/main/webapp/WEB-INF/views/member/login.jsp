@@ -74,6 +74,12 @@
 	</div>
 	<script src='js/member.js?<%=new java.util.Date()%>'></script>
 	<script>
+	$('.login').click(function(){
+		login();
+	});
+	$('#password').keydown(function(e){
+		if(e.keyCode==13) login();
+	})
 	function login(){
 		if( emptyCheck() ){
 			$.ajax({
