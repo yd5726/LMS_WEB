@@ -49,11 +49,11 @@
 								</li>
 								<li>
 									<strong>전화번호</strong>
-									<span>01010011001</span>
+									<span>010-1001-1001</span>
 								</li>
 							</ul>
 							<span class="btn_more">	
-								<a href="modify_myinfo" title="정보수정" class="button small white">
+								<a href="modify_myinfo" title="정보수정" class="modify_myinfo_btn">
 									정보수정
 								</a>
 							</span>
@@ -86,7 +86,7 @@
 						수강 중인 과정
 						<span style="font-size: 0.8em;">(최근 수강시작일순 10개)</span>
 					</h5>
-					<button type="button" class="button small white, btn_course_more"
+					<button type="button" class="more_enrolment_btn"
 						style="position: absolute; right: 0; bottom: 15px;">
 						+ 더보기
 					</button>
@@ -94,10 +94,9 @@
 				<div class="tb_box type_list mypage_course_user_list">
 					<table summary="수강 중인 과정 및 기간 학습율을 나타냅니다.">
 						<colgroup>
-							<col style="width: 7%">
-							<col>
+							<col style="width: 10%">
+							<col style="width: 60%">
 							<col style="width: 27%">
-							<col style="width: 8%">
 							<col style="width: 13%">
 						</colgroup>
 						<thead>
@@ -105,7 +104,6 @@
 								<th scope="col">구분</th>
 								<th scope="col">과정명</th>
 								<th scope="col">학습기간</th>
-								<th scope="col">진도율</th>
 								<th scope="col">강의실</th>
 							</tr>
 						</thead>
@@ -134,7 +132,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="3" class="nodata">상담내역이 없습니다.</td>
+								<td colspan="3" class="tac nodata">상담내역이 없습니다.</td>
 							</tr>
 						</tbody>
 					</table>

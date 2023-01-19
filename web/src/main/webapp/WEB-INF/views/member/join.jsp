@@ -131,19 +131,16 @@
 												</label>
 												<span id='preview'></span>
 												<a id='delete-file' style="display: none;"><i class="font-r fa-solid fa-trash-can"></i></a>
-																<!-- <a onclick="$('form').submit();">aaa</a> -->
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
-							<a class="button white" onclick="location.href='<c:url value="/"/>'">취소</a>
-							<a class="button gray join">회원가입</a>
+							<div class="board btn">
+								<a class="button white" onclick="location.href='<c:url value="/"/>'">취소</a>
+								<a class="button gray join">회원가입</a>
+							</div>
 						</form>
-						<%-- <div class="board btn">
-							<input type="button" class="button white" value="취소" onclick="location.href='<c:url value="/"/>'">
-							<input type="button" class="button gray join" value="회원가입">
-						</div> --%>
 					</div>
 				</div>
 			</div>

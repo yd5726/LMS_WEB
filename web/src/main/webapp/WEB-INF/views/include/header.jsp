@@ -153,7 +153,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	                	<i class="fa-solid fa-mobile-screen text-primary fs-1 me-3"></i>
 	                    <div class="text-start">
 	                        <h6 class="text-uppercase mb-1">Call Us</h6>
-	                        <span>+010 0345 0789</span>
+	                        <span>+010-0345-0789</span>
 	                    </div>
 	                </div>
 	            </div>
