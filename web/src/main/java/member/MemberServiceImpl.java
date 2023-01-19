@@ -9,11 +9,6 @@ import org.springframework.stereotype.Service;
 @Service("member")
 public class MemberServiceImpl implements MemberService {
 	@Autowired private MemberDAO dao;
-//	private MemberDAO dao;
-//	public MemberServiceImpl(MemberDAO dao) {
-//		this.dao = dao;
-//	}
-	
 	
 	@Override
 	public int member_join(MemberVO vo) {

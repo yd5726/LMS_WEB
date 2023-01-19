@@ -10,9 +10,9 @@ where id = #{id} and pw = #{pw}
 <!-- 회원정보저장: 회원가입 -->
 <insert id='join'>
 insert into member(member_code,id,pw,member_name,gender
-,email,birth,phone,type)
-values ( SEQ_MEMBER.nextval,#{id},#{pw},#{member_name}
-,#{gender},#{email},#{type})	
+,email,birth,phone,address,type,profilepath)
+values ( SEQ_MEMBER.nextval,#{id},#{pw},#{member_name},#{gender},#{type}
+,#{email, jdbcType=VARCHAR},#{birth, jdbcType=VARCHAR},#{phone, jdbcType=VARCHAR},#{address, jdbcType=VARCHAR},#{profilepath, jdbcType=VARCHAR})	
 </insert>
 
 <!-- 회원 상세정보 조회 -->

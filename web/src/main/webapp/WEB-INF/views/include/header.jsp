@@ -94,21 +94,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	.container {
   		display: flex;
   		height: 80px;
-  		padding: 0 338px;
+  		padding: 0 50px;
 	}
 	.left-items { width: 70%; }
 	.right-items { width: 30%; }
 	nav { background: #2b1f08; }
 	.left-items > ul { display: flex; justify-content: center; margin: 28.8px auto; }
 	.left-items > ul > li {
-		/* 수정필요 */ 
-		/* margin: 0px 20px; */
 		margin-right: 20px;
+	}
+	.loginfo{
+		height: 100%;
 	}
 	.loginfo > ul { 
 		display: flex; 
 		justify-content: center; 
 		margin: 0;
+		height: inherit;
 	}
 	.nav-link:hover .depth_1 { 
 		display:block; 
@@ -162,7 +164,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 			<div class="left-items">
 				<ul>
 					<li class="nav-link"><a href='<c:url value="/"/>'>홈</a></li>
-					<li class="nav-link"><a href='list.cu' ${category eq 'cu' ? 'class="active"' : ''}>강의</a></li>
+					<li class="nav-link"><a href="#강의">강의</a></li>
 					<li class="nav-link">
 						<a href='#게시판'>게시판</a>
 						<ul class="depth_1">
@@ -171,41 +173,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 						</ul>
 					</li>
 					<li class="nav-link">
-						<a href='#마이페이지'>마이페이지</a>
+						<a href='mypage'>마이페이지</a>
 						<ul class="depth_1">
-							<li><a href="#마이">마이</a></li>
-							<li><a href="#페이지">페이지</a></li>
+							<li><a href="enrolment_log">수강현황</a></li>
+							<li><a href="modify_myinfo">회원정보수정</a></li>
 						</ul>
 					</li>
-					<li class="nav-link"><a href="#test">test</a></li>
-					<li class="nav-link"><a href="#test">test</a></li>
-					<li class="nav-link"><a href="#test">test</a></li>
-					<li class="nav-link"><a href="#test">test</a></li>
-					<li class="nav-link"><a href="#test">test</a></li>
-					<li class="nav-link"><a href="#test">test</a></li>
 				</ul>
 			</div>
 			<div class="right-items">
-				<div class="loginfo">
-					<ul>
-						<!-- 로그인 하지 않은 경우 -->
-						<c:if test="${empty loginInfo }">
+				<c:if test="${empty loginInfo }">
+					<div class="loginfo">
+						<ul>
+							<!-- 로그인 하지 않은 경우 -->
 							<li class="nav-link"><a class='btn-fill' href='login'>로그인</a></li>
 							<li class="nav-link"><a class='btn-fill' href='member'>회원가입</a></li>
-						</c:if>
-					</ul>
-				</div>
-				<div class="loginfo">
-					<ul>
-						<!-- 로그인 한 경우 -->
-						<c:if test="${not empty loginInfo }">
+						</ul>
+					</div>
+				</c:if>
+				<c:if test="${not empty loginInfo }">
+					<div class="loginfo">
+						<ul>
+							<!-- 로그인 한 경우 -->
 							<li><img class='profile' src="${loginInfo.profilepath}">
 							<li><strong> ${loginInfo.member_name }</strong></li>
 							<li class="nav-link"><a class='btn-fill' href="changePW">비밀번호변경</a></li>
 							<li class="nav-link"><a class='btn-fill' href="logout">로그아웃</a></li>
-						</c:if>
-					</ul>
-				</div>
+						</ul>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</nav>

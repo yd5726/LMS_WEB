@@ -8,16 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="css/member.css?<%=new java.util.Date()%>">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
-<style>
-	.hasDatepicker{ cursor: pointer; }
-	.ui-datepicker { 
-		width: 17em; 
-		padding: .2em .2em 0; 
-		display: none;
-		 font-size: 20px;
-		 background-color: #fff;
-	}
-</style>
 <body>
 	<h3 class="d-none">회원서비스</h3>
 	<div id="container" class="ct_top">
@@ -55,7 +45,7 @@
 					<h5 class="box_title">회원가입</h5>
 					<span class="must">*필수 항목입니다.</span>
 					<div class="tb_box">
-						<form method='post' action='join_ok' enctype='multipart/form-data'>
+						<form method='post' action='join' enctype='multipart/form-data'>
 							<table>
 								<colgroup>
 									<col style="width: 14%">
@@ -63,11 +53,11 @@
 								</colgroup>
 								<tbody>
 									<tr><th class="tb_th">
-											<label for="member_code" class="join_required">회원 구분<span class="must">*</span></label>
+											<label for="type" class="join_required">회원 구분<span class="must">*</span></label>
 										</th>
-										<td><label><input type="radio" name="member_code" value="STUD" checked="checked">학생</label>
+									 	<td><label><input type="radio" name="type" value="STUD" checked="checked">학생</label>
 											&nbsp;
-											<label><input type="radio" name="member_code" value="TEACH">강사</label>
+											<label><input type="radio" name="type" value="TEACH">강사</label>
 										</td>
 									</tr>
 									<tr><th class="tb_th">
@@ -132,25 +122,28 @@
 											<input type='text' name='address' class='full'>
 										</td>
 									</tr>
-									<tr><th class="tb_th"><label for="prifilepath" class="join_required">프로필 이미지</label>
+									<tr><th class="tb_th"><label for="profilepath" class="join_required">프로필 이미지</label>
 										</th>
 										<td>
 											<div class='align'>
 												<label>
-													<input type='file' id='attach-file' accept="image/*" name='prifilepath' class="w200">
+													<input type='file' id='attach-file' accept="image/*" name='profilepath' class="w200">
 												</label>
 												<span id='preview'></span>
 												<a id='delete-file' style="display: none;"><i class="font-r fa-solid fa-trash-can"></i></a>
+																<!-- <a onclick="$('form').submit();">aaa</a> -->
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
+							<a class="button white" onclick="location.href='<c:url value="/"/>'">취소</a>
+							<a class="button gray join">회원가입</a>
 						</form>
-						<div class="board btn">
+						<%-- <div class="board btn">
 							<input type="button" class="button white" value="취소" onclick="location.href='<c:url value="/"/>'">
-							<input type="button" class="button gray join" id="btn_submit" value="회원가입">
-						</div>
+							<input type="button" class="button gray join" value="회원가입">
+						</div> --%>
 					</div>
 				</div>
 			</div>
@@ -161,6 +154,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
 <script>
+
 $('.join').click(function(){
 	if( $.trim($('[name=member_name]').val())=='' ){
 		alert('이름을 입력하세요');
@@ -277,6 +271,7 @@ $('#post').click(function(){
 		}
     }).open();
 });
+
 </script>
 </body>
 </html>
