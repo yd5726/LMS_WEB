@@ -7,9 +7,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	* { box-sizing: border-box; }
 	a { text-decoration: none; color: #000; }
 	/* ============================================= */
-	.bg-secondary { background-color: #FAF3EB; }
-	.text-primary { color: #E88F2A; }
-	.bg-primary { background-color: #E88F2A; }
+	.text-primary { color: #1d273d; }
+	.bg-primary { background-color: #293859; }
+	.bg-secondary { background-color: #b8c6e6; }
 	/* ============================================= */
 	.col-lg-4 {
 		flex: 0 0 auto;
@@ -74,7 +74,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     	z-index: 0;
 	}
 	.logo_img { border-radius: 70%; }
-	.logo_title { font-size: 30px; }
+	.logo_title { 
+		font-size: 30px;
+		color: #fff;
+	}
 	.navbar-brand {
 		padding-top: 0.3125rem;
 		padding-bottom: 0.3125rem;
