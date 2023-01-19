@@ -12,6 +12,6 @@
 		border-top: 1px solid #aaa;
 		padding: 15px 0;
 		color: #fff;
-		background-color: #2b1f08;
+		background-color: #000;
 	}
 </style>

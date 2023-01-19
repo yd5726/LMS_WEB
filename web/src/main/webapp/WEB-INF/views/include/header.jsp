@@ -101,7 +101,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	}
 	.left-items { width: 70%; }
 	.right-items { width: 30%; }
-	nav { background: #2b1f08; }
+	nav { background: #000; }
 	.left-items > ul { display: flex; justify-content: center; margin: 28.8px auto; }
 	.left-items > ul > li {
 		margin-right: 20px;
@@ -115,18 +115,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		margin: 0;
 		height: inherit;
 	}
+	.nav-link { font-size: 20px; }
 	.nav-link:hover .depth_1 { 
 		display:block; 
 		background-color: #fff;
-		border: 1px solid black;
 	}
 	.depth_1 { 
 		display:none; 
 		position:absolute;
 		left: 100; 
 		right: 100; 
-		width: 100px;
-		height: 100px;
+		width: 150px;
+		border: 1px solid #000;
 	}
 	strong{ color: #fff; }
 	.loginfo > ul  > li { 
@@ -178,8 +178,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 					<li class="nav-link">
 						<a href='mypage'>마이페이지</a>
 						<ul class="depth_1">
-							<li><a href="enrolment_log">수강현황</a></li>
-							<li><a href="modify_myinfo">회원정보수정</a></li>
+							<li><a href="enrolment_log">수강 현황</a></li>
+							<li><a href="modify_myinfo">회원 정보 수정</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -16,10 +16,10 @@
 				<h3 class="lnb_title">마이페이지</h3>
 				<ul id="lnb" class="lnb_list" data-code="member">
 					<li id="lnb_enrolment_log">
-						<a href="enrolment_log" target="_self">수강현황</a>
+						<a href="enrolment_log" target="_self">수강 현황</a>
 					</li>
 					<li id="lnb_modify_myinfo">
-						<a href="modify_myinfo" target="_self">회원정보수정</a>
+						<a href="modify_myinfo" target="_self">회원 정보 수정</a>
 					</li>
 				</ul>
 			</div>
@@ -86,13 +86,12 @@
 						수강 중인 과정
 						<span style="font-size: 0.8em;">(최근 수강시작일순 10개)</span>
 					</h5>
-					<button type="button" class="more_enrolment_btn"
-						style="position: absolute; right: 0; bottom: 15px;">
+					<a href="enrolment_log" title="정보수정" class="more_enrolment_btn">
 						+ 더보기
-					</button>
+					</a>
 				</div>
 				<div class="tb_box type_list mypage_course_user_list">
-					<table summary="수강 중인 과정 및 기간 학습율을 나타냅니다.">
+					<table summary="수강 중인 과정 및 기간을 나타냅니다.">
 						<colgroup>
 							<col style="width: 10%">
 							<col style="width: 60%">
