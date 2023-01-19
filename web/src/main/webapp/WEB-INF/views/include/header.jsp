@@ -94,7 +94,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	.container {
   		display: flex;
   		height: 80px;
-  		padding: 0 50px;
+  		padding: 0 338px;
 	}
 	.left-items { width: 70%; }
 	.right-items { width: 30%; }
@@ -177,6 +177,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 							<li><a href="#페이지">페이지</a></li>
 						</ul>
 					</li>
+					<li class="nav-link"><a href="#test">test</a></li>
+					<li class="nav-link"><a href="#test">test</a></li>
+					<li class="nav-link"><a href="#test">test</a></li>
+					<li class="nav-link"><a href="#test">test</a></li>
+					<li class="nav-link"><a href="#test">test</a></li>
+					<li class="nav-link"><a href="#test">test</a></li>
 				</ul>
 			</div>
 			<div class="right-items">

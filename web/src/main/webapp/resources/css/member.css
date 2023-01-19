@@ -4,7 +4,7 @@ a{ text-decoration: none; color: #000; }
 p,h3,h4,h5,h6{ margin:0; padding: 0; }
 body{
 	font-family: "Noto Sans KR";
-	color: #666;
+	color: #000;
 	overflow-y: scroll;
 }
 .main_wrap{
