@@ -1,36 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!-- <style>
-header {
-	border-bottom: 1px solid #aaa;
-	align-items: center; 
-	justify-content: space-between;
-	padding: 0 100px;
-	display: flex;
-}
-header nav, header ul { display: flex; }
-header nav ul { font-size: 18px; font-weight: bold; }
-header nav ul li:not(:first-child) { margin-left: 10px; }
-header nav li a.active, header nav li a:hover { color: #fff; font-weight: bold; }
-header div li:not(:first-child) { margin-left: 5px; }
-.profile{
-	width: 20px;
-	height: 20px;
-}
-</style> 
--->
-<!-- <style>
-	a{ text-decoration: none; color: #000; }
-	nav{
-		display: flex;
-		justify-content: center;
-		flex-basis: auto;
-		flex-grow: 1;
-		align-items: center;
-		background-color: #656565;
-	}
-	nav ul li{ flex-direction: row; }
-</style> -->
 <link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
@@ -66,6 +35,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.m-0 { margin: 0; }
 	/* ============================================= */
 	.text-center { text-align: center; }
 	.justify-content-center {
@@ -113,23 +83,49 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 		white-space: nowrap;
 	}
 	/* ============================================= */
-	nav > ul {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: #573631;
-		margin: 0;
-		padding: 30px;
-	}
-	nav > ul > li { margin: 0px 20px; }
+	nav > ul > li { /* margin: 0px 20px; */ }
 	nav > ul > li > a:hover { color: #E88F2A; }
 	.nav-link > a { color: #fff; }
-	.log {
-		position: absolute;
-		top: 100px;
-		right: 100px;
-		width: 500px;
-		background-color: #234;
+	.profile { 
+		width: 50px; 
+		height: 50px;
+		border-radius: 70%;
+	}
+	.container {
+  		display: flex;
+  		height: 80px;
+  		padding: 0 50px;
+	}
+	.left-items { width: 70%; }
+	.right-items { width: 30%; }
+	nav { background: #2b1f08; }
+	.left-items > ul { display: flex; justify-content: center; margin: 28.8px auto; }
+	.left-items > ul > li {
+		/* 수정필요 */ 
+		/* margin: 0px 20px; */
+		margin-right: 20px;
+	}
+	.loginfo > ul { 
+		display: flex; 
+		justify-content: center; 
+		margin: 0;
+	}
+	.nav-link:hover .depth_1 { 
+		display:block; 
+		background-color: #fff;
+		border: 1px solid black;
+	}
+	.depth_1 { 
+		display:none; 
+		position:absolute;
+		left: 100; 
+		right: 100; 
+		width: 100px;
+		height: 100px;
+	}
+	strong{ color: #fff; }
+	.loginfo > ul  > li { 
+		margin: 0 20px;
 	}
 </style>
 <header>
@@ -162,32 +158,48 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	        </div>
 	</div>
 	<nav>
-		<ul>
-			<li class="nav-link"><a href='<c:url value="/"/>'>홈</a></li>
-			<li class="nav-link"><a href='list.cu' ${category eq 'cu' ? 'class="active"' : ''}>강의</a></li>
-			<li class="nav-link"><a href='list.hr' ${category eq 'hr' ? 'class="active"' : ''}>게시판</a></li>
-			<li class="nav-link"><a href='list.no' ${category eq 'no' ? 'class="active"' : ''}>마이페이지</a></li>
-		</ul>
-		<div class="log">
-			<div>
+		<div class="container">
+			<div class="left-items">
 				<ul>
-					<!-- 로그인 하지 않은 경우 -->
-					<c:if test="${empty loginInfo }">
-						<li class="nav-link"><a class='btn-fill' href='login'>로그인</a></li>
-						<li class="nav-link"><a class='btn-fill' href='member'>회원가입</a></li>
-					</c:if>
+					<li class="nav-link"><a href='<c:url value="/"/>'>홈</a></li>
+					<li class="nav-link"><a href='list.cu' ${category eq 'cu' ? 'class="active"' : ''}>강의</a></li>
+					<li class="nav-link">
+						<a href='#게시판'>게시판</a>
+						<ul class="depth_1">
+							<li><a href="#공지사항">공지사항</a></li>
+							<li><a href="#자유게시판">자유게시판</a></li>
+						</ul>
+					</li>
+					<li class="nav-link">
+						<a href='#마이페이지'>마이페이지</a>
+						<ul class="depth_1">
+							<li><a href="#마이">마이</a></li>
+							<li><a href="#페이지">페이지</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
-			<div>
-				<ul>
-					<!-- 로그인 한 경우 -->
-					<c:if test="${not empty loginInfo }">
-						<li><img class='profile' src="${loginInfo.profilepath}">
-						<li><strong> ${loginInfo.member_name }</strong></li>
-						<li class="nav-link"><a class='btn-fill' href="changePW">비밀번호변경</a></li>
-						<li class="nav-link"><a class='btn-fill' href="logout">로그아웃</a></li>
-					</c:if>
-				</ul>
+			<div class="right-items">
+				<div class="loginfo">
+					<ul>
+						<!-- 로그인 하지 않은 경우 -->
+						<c:if test="${empty loginInfo }">
+							<li class="nav-link"><a class='btn-fill' href='login'>로그인</a></li>
+							<li class="nav-link"><a class='btn-fill' href='member'>회원가입</a></li>
+						</c:if>
+					</ul>
+				</div>
+				<div class="loginfo">
+					<ul>
+						<!-- 로그인 한 경우 -->
+						<c:if test="${not empty loginInfo }">
+							<li><img class='profile' src="${loginInfo.profilepath}">
+							<li><strong> ${loginInfo.member_name }</strong></li>
+							<li class="nav-link"><a class='btn-fill' href="changePW">비밀번호변경</a></li>
+							<li class="nav-link"><a class='btn-fill' href="logout">로그아웃</a></li>
+						</c:if>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</nav>
