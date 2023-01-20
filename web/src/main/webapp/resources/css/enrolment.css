@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* ======================================== */
+/*   수강신청                           */
+/* ======================================== */
+a{ text-decoration: none; color: #000; cursor: pointer; }
+p,h3,h4,h5,h6{ margin:0; padding: 0; }
+body{
+	font-family: "Noto Sans KR";
+	color: #000;
+	overflow-y: scroll;
+}
+ol,ul,li{
+	list-style: none;
+}
+form{
+	padding: 0;
+	margin: 0;
+}
+input[type=text], input[type=password], select{
+	height: 30px;
+	line-height: 30px;
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+}
+tbody th.tb_th{
+	background-color: #f8f8f8;
+	color: #474747;
+	padding-left: 10px;
+	text-align: left;
+	border-bottom: 1px solid #d1d1d1;
+}
+tbody td{
+	height: 22px;
+	line-height: 22px;
+	border-bottom: 1px solid #d1d1d1;
+	padding: 10px;
+}
+table{
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;	
+	box-sizing: border-box;
+	text-indent: inherit;
+}
+/* ======================================== */
+.d-none{ display: none; }
+/* ======================================== */
+#container{
+	text-align: left; 
+}
+#contet_area{
+	float: none;
+	width: 1200px;
+	min-height: 750px;
+}
+/* ======================================== */
+.main_wrap{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.content_body{
+	overflow: hidden;
+	padding: 15px 0 0;
+}

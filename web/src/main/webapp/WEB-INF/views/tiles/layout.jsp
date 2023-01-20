@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-
-
 <!DOCTYPE html>
-
 <html>
 <head>
 <meta charset="UTF-8">
@@ -20,15 +16,10 @@
 </c:choose>
 
 <title>YH-Academy ${title }</title>
-<link rel='icon' type="image/x-icon" href="images/hanul.ico">
 <link href="css/common.css?<%=new java.util.Date() %>" rel="stylesheet" type="text/css">
-
 <script type='text/javascript' src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src='js/common.js?<%=new java.util.Date() %>'></script>
-
 </head>
-
-
 <body>
 	<tiles:insertAttribute name="header" />
 	<div style='margin:20px auto'>

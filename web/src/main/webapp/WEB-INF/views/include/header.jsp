@@ -167,7 +167,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 			<div class="left-items">
 				<ul>
 					<li class="nav-link"><a href='<c:url value="/"/>'>홈</a></li>
-					<li class="nav-link"><a href="#강의">강의</a></li>
+					<li class="nav-link">
+						<a href='#소개'>소개</a>
+						<ul class="depth_1">
+							<li><a href="modify_myinfo">학원 소개</a></li>
+							<li><a href="modify_myinfo">강사 소개</a></li>
+						</ul>
+					</li>
+					<li class="nav-link"><a href="enrolment">강의</a></li>
 					<li class="nav-link">
 						<a href='#게시판'>게시판</a>
 						<ul class="depth_1">
